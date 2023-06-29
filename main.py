@@ -32,18 +32,18 @@ def main():
 
     # Option #1: Writing a cover letter.
     if option == "1":
-    #Get necessary information from the user
-    #With permission from Dice.com, this will be replaced with BeautifulSoup4 website scraping
+    # Get necessary information from the user
+    # With permission from Dice.com, this will be replaced with BeautifulSoup4 website scraping
       job_board = input("Which job board did you find this job on?: ")
       employer_name = input("What is the name of the company?: ")
       job_title = input("What is the advertised job title?: ")
       job_description = input("Paste job description here: ")
 
-      #Create the prompt using function
+      # Create the prompt using function
       prompt = functions.prompt_creation(text, job_description)    
 
 
-      #chatGPT generates a response with GPT-3.5-turbo into a class object
+      # chatGPT generates a response with GPT-3.5-turbo into a class object
       cover_letter = openai.ChatCompletion.create(
         model="gpt-3.5-turbo", 
         messages=[{"role": "user", "content": 
@@ -51,12 +51,14 @@ def main():
       )
 
 
-      #Turn the class object output into a string so that it is readable by the split function.
+      # Turn the class object output into a string so that it is readable by the split function.
       output = cover_letter['choices'][0]['message']['content']
 
 
       #Formats the output to seperate the paragraphs, and replaces placeholder values, then prints the output
-      output = output.replace("[Company Name]", employer_name)
+      output = output.replace("[Company Name]", "Hiring Manager")
+      output = output.replace("[Employer's Name]", "Hiring Manager")
+      output = output.replace("[Hiring Manager]", "Hiring Manager")
 
       output = output.replace("[Job Title]", job_title)
       output = output.replace("[Job Position]", job_title)
