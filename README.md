@@ -9,5 +9,7 @@ This program does the following:
 - Automatically copies the cover letter to clipboard.
 
 TODO:
-- Implement grammarly assistance to refine the text (Needs further research).
+- Implement grammarly assistance to refine the text (Partially complete)
+  
+  
 
