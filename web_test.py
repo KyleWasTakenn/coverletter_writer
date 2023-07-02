@@ -86,5 +86,4 @@ WebDriverWait(driver, timeout = 7).until(ec.element_to_be_clickable((By.CLASS_NA
 # Creating a new document
 # Find the new document button and click
 create_doc = driver.find_element(by=By.CLASS_NAME, value = "_54ecb82a-document-item-add")
-create_doc.send_keys(Keys.CONTROL + "t")
 create_doc.click()
