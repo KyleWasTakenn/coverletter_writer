@@ -10,6 +10,4 @@ This program does the following:
 
 TODO:
 - Implement grammarly assistance to refine the text (Partially complete)
-  
-  
-
+- Improve the prompt to generate a better (less generic) cover letter
